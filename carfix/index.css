@@ -1,0 +1,26 @@
+
+.centers{
+margin: auto;
+margin-top: 15px;
+min-width: 500px;
+max-width: 500px;
+border: 2px solid green;
+padding: 10px;
+font-family: 'Fira Sans', sans-serif;
+}
+
+.history{
+    margin-bottom: 5px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.center{
+    margin: auto;
+    margin-top: 15px;
+    min-width: 600px;
+    max-width: 600px;
+    border: 1.8px solid #37AFAD;
+    padding: 10px;
+    font-family: 'Fira Sans', sans-serif;
+}
+

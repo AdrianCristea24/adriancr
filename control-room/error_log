@@ -1,0 +1,50 @@
+[20-Mar-2022 17:15:22 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[20-Mar-2022 17:19:44 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[20-Mar-2022 17:20:25 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[20-Mar-2022 17:22:02 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[20-Mar-2022 17:22:04 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[20-Mar-2022 17:22:07 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[20-Mar-2022 17:23:46 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[20-Mar-2022 17:26:24 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[20-Mar-2022 17:26:30 UTC] PHP Warning:  file_get_contents(http://localhost/scripts/control_me/apis/singleRead.php): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/adrianc2/public_html/control-room/index.php on line 11
+[23-Mar-2022 23:45:59 UTC] PHP Warning:  file_get_contents(http://adriancr.ro/control-room/apis/readRequests.php): failed to open stream: HTTP request failed! HTTP/1.0 500 Internal Server Error
+ in /home/adrianc2/public_html/control-room/index.php on line 14
+[23-Mar-2022 23:45:59 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /home/adrianc2/public_html/control-room/index.php on line 70
+[23-Mar-2022 23:48:10 UTC] PHP Warning:  file_get_contents(http://adriancr.ro/control-room/apis/readRequests.php): failed to open stream: HTTP request failed! HTTP/1.0 500 Internal Server Error
+ in /home/adrianc2/public_html/control-room/index.php on line 14
+[23-Mar-2022 23:48:10 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /home/adrianc2/public_html/control-room/index.php on line 70
+[23-Mar-2022 23:48:27 UTC] PHP Warning:  file_get_contents(http://adriancr.ro/control-room/apis/readRequests.php): failed to open stream: HTTP request failed! HTTP/1.0 500 Internal Server Error
+ in /home/adrianc2/public_html/control-room/index.php on line 14
+[23-Mar-2022 23:48:27 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /home/adrianc2/public_html/control-room/index.php on line 70
+[23-Mar-2022 23:50:43 UTC] PHP Warning:  file_get_contents(http://adriancr.ro/control-room/apis/readRequests.php): failed to open stream: HTTP request failed! HTTP/1.0 500 Internal Server Error
+ in /home/adrianc2/public_html/control-room/index.php on line 14
+[23-Mar-2022 23:50:43 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /home/adrianc2/public_html/control-room/index.php on line 71
+[16-May-2022 22:08:48 UTC] PHP Warning:  file_get_contents(http://adriancr.ro/control-room/apis/readHome.php): failed to open stream: HTTP request failed! HTTP/1.0 500 Internal Server Error
+ in /home/adrianc2/public_html/control-room/home.php on line 4
+[16-May-2022 22:08:53 UTC] PHP Warning:  file_get_contents(http://adriancr.ro/control-room/apis/readHome.php): failed to open stream: HTTP request failed! HTTP/1.0 500 Internal Server Error
+ in /home/adrianc2/public_html/control-room/home.php on line 4
+[26-Jun-2022 14:04:09 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:04:16 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:04:24 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:07:26 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:07:27 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:07:35 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:07:39 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:07:41 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:08:02 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:09:53 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:09:56 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:10:56 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:12:15 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:12:19 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:12:34 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74
+[26-Jun-2022 14:12:42 UTC] PHP Warning:  Use of undefined constant stropitori - assumed 'stropitori' (this will throw an Error in a future version of PHP) in /home/adrianc2/public_html/control-room/home.php on line 74

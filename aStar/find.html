@@ -1,0 +1,479 @@
+<DOCTYPE html>
+<html>
+<style>
+
+.menu-container {
+    margin-left:4%;
+    margin-left:4%;
+    width: 1800;
+    background: gray;
+}
+.button-container > a {
+    width: 55px;
+    height: 55px;
+    float: left;
+    background: lightgray;
+    margin: 0.5;
+}
+
+.comm{
+  margin-left:4%;
+
+  background: #ffffb3;
+  width: 1800;
+  float: left;
+  position: static;
+  text-align: center;
+}
+
+.clickMe{
+  margin-left: 4%;
+  margin-right: 80;
+  float: left;
+  background-color: #ffd699;
+
+}
+
+.a{
+  text-align: center;
+
+}
+
+
+
+</style>
+
+<body style='background: gray'>
+  <script src='aStar.js'></script>
+  <div class="comm">
+  <h1 class="clickMe" style='background: #ffffb3'> A* PathFinding </h1>
+  <h1 id="selectWallId" class="clickMe" onclick="selectWall()" style="margin-right:0; background:lightgray">Wall</h1>
+  <h1 class="clickMe" onclick="collectData()" style="margin-right:0;"> Search </h1>
+  <h1 class="clickMe" onclick="refresh()"> Refresh</h1>
+  <h1 class="clickMe" onclick="clearWalls()"> Clear Walls </h1>
+  <p onclick="collectData()"> *the number is the G cost</p>
+  </div>
+  <div class="menu-container">
+    <div class="button-container">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+        <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+         <a  oncontextmenu="wallChange(this.id); return false;" class="button" onclick="changeColor(this.id)">
+
+    </div>
+</div>
+
+</body>
+</html>

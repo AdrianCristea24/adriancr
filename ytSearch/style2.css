@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.body1{
+    background-color: rgb(31, 31, 31);
+}
+
+.banner{
+    width: 80%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(243, 241, 241, 0.6),rgba(173, 173, 173, 0.6));
+    background-size: cover;
+    background-position: center;
+    margin-left: 10%;
+    
+}
+
+.logo{
+    width: 50;
+    margin: auto;
+    position:absolute;
+    left:-12%;
+    top:-10%;
+    display: flex;
+    align-content: flex-start;
+        
+}
+
+.box{
+    position:absolute;
+    top: 20%;
+    left: 50%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    align-content: flex-end;
+    
+}
+    
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+    
+       
+}
+
+input[type="text"]{
+    background: #fff;
+    width: 350px;
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    border-radius: 50px 0 0 50px;
+    font-size: 16;
+    
+       
+}
+
+input[type="button"]{
+    position: relative;
+    border-radius: 0 50px 50px 0;
+    height: 30px;
+    width: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: gray;
+    font-size: 16;
+    color: fff;
+    left: 355;
+    top: -30
+    
+}
+
+input[type="button"]:hover{
+    background: #ff0000;
+}
+
+
+.sus{
+    position: sticky;
+    width: 500px;
+       
+}
+
+.thumbnail{
+    position:sticky;
+    max-width: 350;
+    left: -100%;
+    top: 10%;
+    height: auto;
+}
+
+.like{
+    position: absolute;
+    max-width: 30;
+    height: auto;
+    left: 75%;
+    top: 60%;
+}
+
+.dislike{
+    position: absolute;
+    max-width: 30;
+    height: auto;
+    left: 110%;
+    top: 60%;
+}
+
+h1{
+    color: white;
+    position: absolute;
+    left: 75%;
+    top: 10%;
+    font-size: 18;
+    width:500;
+    
+}
+
+h2{
+    color: white;
+    position: absolute;
+    left: 75%;
+    top: 0%;
+    font-size: 16
+}
+
+h3{
+   color: white;
+    position: absolute;
+    left: 85%;
+    top: 63%;
+    font-size: 16 
+}
+
+h4{
+    color: white;
+    position: absolute;
+    left: 120%;
+    top: 63%;
+    font-size: 16 
+}
+
+.avatarcanal{
+   width: 40px;
+    clip: auto;
+    border-radius: 200px 200px 200px 200px;
+    position: absolute;
+    left: 75%;
+    top: 35%;
+    
+}
+
+h5{
+    color: white;
+    position: absolute;
+    left: 85%;
+    top: 38%;
+    font-size: 16;
+    width: 100;
+    
+}
+
+h6{
+    color: white;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    font-size: 13;
+}
+
+h7{
+    color: white;
+    position: absolute;
+    left: 10%;
+    font-size: 13;
+}
+
+
+.topc{
+   position: relative;
+   left: 130%;
+    top: 100%;
+       
+}
+
+h8{
+    color: white;
+    position: relative;
+    left: 10%;
+    font-size: 20;
+}
+
+.avatarcom{
+    
+    width: 50px;
+    clip: auto;
+    border-radius: 200px 200px 200px 200px;
+    position: absolute;
+    left: -630;
+    top:0;
+}
+
+h9{
+    color: gold;
+    position: absolute;
+    left: -570;
+    top: 4;
+    font-size: 18;
+}
+
+h10{
+    color: white;
+    position: absolute;
+    left: -560;
+    top: 30;
+    font-size: 14;
+    width: auto;
+}
+
+.like1{
+    position:absolute;
+    width: 18;
+    left: -560;
+    top: 63;
+    
+}
+
+h11{
+    color: white;
+    position: absolute;
+    left: -530;
+    top: 66
+}
+
+.more{
+    position:relative;
+}
+
+h12{
+    color: white;
+    position: relative;
+    left: -650;
+    top: 120;
+    font-size: 22;
+}
+
+h13{
+    color: white;
+    position: absolute;
+    left: -630;
+    top: 155;
+    font-size: 16;
+    
+}
+
+h14{
+    color: white;
+    position: absolute;
+    left: -630;
+    top: 175;
+    font-size: 16;
+}
+
+h15{
+    color: white;
+    position: absolute;
+    left: -630;
+    top: 195;
+    font-size: 16;
+}
+
+h16{
+    color: white;
+    position: absolute;
+    left: -630;
+    top: 215;
+    font-size: 16;
+}
